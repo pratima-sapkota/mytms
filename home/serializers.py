@@ -10,7 +10,8 @@ class MemberSerializer(serializers.ModelSerializer):
     campaign = CampaignSerializer(read_only = True)
     class Meta:
         model = Member
-        exclude = ["id"]
+        # exclude = [""]
+        fields = '__all__'
 
 class TaskSerializer(serializers.ModelSerializer):
     submitted_by = MemberSerializer()

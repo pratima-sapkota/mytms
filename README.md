@@ -24,3 +24,6 @@
     - Create a DRF endpoint to get 25 tasks per page for a specific week. The response should contain the task’s details and relationships as campaign, trainer, lead, and review (for reviewed tasks). Optimize the query in two ways: query level and cache level. Use all resources you know of DRF to make it simple and fast.
     - Each DRF API view must be documented using docstrings.
 
+## Managa=ement command for load data is `python manage.py dummy_data`
+
+

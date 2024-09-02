@@ -23,7 +23,7 @@ class Member(models.Model):
     name =  models.CharField(max_length=250, null=False, blank=False, help_text="full name of the member")
     created = models.DateTimeField(auto_now_add=True, help_text="When the member was created")
     modified = models.DateTimeField(auto_now=True, help_text="When the member details was modified")
-    campaign =  models.ForeignKey(Campaign, on_delete=models.PROTECT, related_name="Campaign", null=True)
+    campaign =  models.ForeignKey(Campaign, on_delete=models.PROTECT, related_name="AssignedCampaign", null=True)
     
     class Meta:
         ordering = ['-created']
@@ -41,6 +41,7 @@ class Task(models.Model):
     status = models.CharField(choices=CHOICES, default='choices', max_length=50, null=False, blank=False)
     created = models.DateTimeField(auto_now_add=True, help_text="When the task was created")
     modified = models.DateTimeField(auto_now=True, help_text="When the task was modified")
+    campaign = models.ForeignKey(Campaign, on_delete=models.PROTECT, related_name="TaskCampaign", null=True)
     submitted_by = models.ForeignKey(Member, on_delete=models.PROTECT, related_name="Trainer", null=True)
     reviewed_by = models.ForeignKey(Member, on_delete=models.PROTECT, related_name="Lead", null=True)
 

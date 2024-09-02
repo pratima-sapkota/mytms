@@ -109,6 +109,7 @@ class FetchTasks(ListAPIView):
                 # return Response("Invalid date format. Format should be yyyy-mm-dd.", status = 400)
             
             end_date = start_date + datetime.timedelta(days = 6)
-            queryset = Task.objects.filter(created__gte = start_date, created__lte = end_date)
+            queryset = Task.objects.filter(created__gte = start_date, created__lte = end_date).select_related('submitted_by', 'campaign','reviewed_by')
+
             return queryset
         return []

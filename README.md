@@ -27,3 +27,11 @@
 ## Managa=ement command for load data is `python manage.py dummy_data`
 
 
+## API endpoints 
+- campaign/
+- campaign/uuid/
+- task/
+- task/uuid/
+- member/
+- member/email/
+- weekly-tasks/date/
